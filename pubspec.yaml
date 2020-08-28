@@ -23,6 +23,14 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  cloud_firestore: ^0.14.0+2
+  image_picker: ^0.6.7+7
+  firebase_storage: ^4.0.0
+  firebase_auth: ^0.18.0+1
+  google_sign_in: ^4.5.3
+  geolocator: ^5.3.2+2
+  uuid: ^2.2.2
+  image: ^2.1.14
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -32,6 +40,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -43,6 +52,17 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+
+  fonts:
+    - family: Signatra
+      fonts:
+        - asset: assets/fonts/Signatra.ttf
+  assets:
+    - assets/images/google_signin_button.png
+    - assets/images/upload.svg
+    - assets/images/search.svg
+    - assets/images/activity_feed.svg
+    - assets/images/no_content.svg
 
   # To add assets to your application, add an assets section, like this:
   # assets:
