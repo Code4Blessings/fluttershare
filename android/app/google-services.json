@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "657644499359",
+    "firebase_url": "https://fluttershare-6dc41.firebaseio.com",
+    "project_id": "fluttershare-6dc41",
+    "storage_bucket": "fluttershare-6dc41.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:657644499359:android:fa1dfa5e1ae03da626cdaa",
+        "android_client_info": {
+          "package_name": "com.robinwarden.fluttershare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "657644499359-0h9cn018oqhfca2i8ves8ef15e50r8jb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbseT7cHEsdCeqqYWJWU22OyML-V7C5zM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "657644499359-0h9cn018oqhfca2i8ves8ef15e50r8jb.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "657644499359-bmhmkl5refmoucs8s4ochc4c61tputk4.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.robinwarden.fluttershare"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
