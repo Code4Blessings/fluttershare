@@ -13,10 +13,13 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   bool isAuth = false;
+  PageController pageController;
+  int pageIndex = 0;
 
   @override
   void initState() {
     super.initState();
+    pageController = PageController();
     googleSignin.onCurrentUserChanged.listen((account) {
       handleSignin(account);
     }, onError: (err) {
@@ -45,12 +48,30 @@ class _HomeState extends State<Home> {
     }
   }
 
+  @override
+  void dispose() {
+    pageController.dispose();
+    super.dispose();
+  }
+
   login() {
     googleSignin.signIn();
   }
 
   logout() {
     googleSignin.signOut();
+  }
+
+  onPageChanged(int pageIndex) {
+    setState(() {
+      this.pageIndex = pageIndex;
+    });
+  }
+
+  onTap(int pageIndex) {
+    pageController.jumpToPage(
+      pageIndex,
+    );
   }
 
   Scaffold buildAuthScreen() {
@@ -63,7 +84,21 @@ class _HomeState extends State<Home> {
           Search(),
           Profile(),
         ],
-        controller: pageController;
+        controller: pageController,
+        onPageChanged: onPageChanged,
+        physics: NeverScrollableScrollPhysics(),
+      ),
+      bottomNavigationBar: CupertinoTabBar(
+        currentIndex: pageIndex,
+        onTap: onTap,
+        activeColor: Theme.of(context).primaryColor,
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.whatshot)),
+          BottomNavigationBarItem(icon: Icon(Icons.notifications_active)),
+          BottomNavigationBarItem(icon: Icon(Icons.photo_camera, size: 35.0,)),
+          BottomNavigationBarItem(icon: Icon(Icons.search)),
+          BottomNavigationBarItem(icon: Icon(Icons.account_circle)),
+        ],
       ),
     );
     // return RaisedButton(
